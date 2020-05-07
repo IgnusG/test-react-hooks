@@ -1,5 +1,5 @@
-import { createTestProxy, cleanUp } from "test-react-hooks";
-import { useState } from "react";
+import { createTestProxy, cleanUp } from "test-preact-hooks";
+import { useState } from "preact/hooks";
 
 //Cleans up the dom container that's created during testing
 afterEach(() => cleanUp());

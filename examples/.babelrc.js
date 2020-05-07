@@ -1,4 +1,6 @@
 module.exports = {
-  presets: ["@babel/preset-react"],
-  plugins: ["@babel/plugin-transform-modules-commonjs"]
+  plugins: [
+    "@babel/plugin-transform-modules-commonjs",
+    ["@babel/plugin-transform-react-jsx", { pragma: "h" }]
+  ]
 };

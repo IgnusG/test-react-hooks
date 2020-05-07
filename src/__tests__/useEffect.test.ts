@@ -1,5 +1,5 @@
 import { createTestProxy } from "../";
-import { useEffect } from "react";
+import { useEffect } from "preact/hooks";
 
 const spyLeave = jest.fn();
 const spy = jest.fn(() => spyLeave);

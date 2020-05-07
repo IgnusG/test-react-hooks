@@ -1,5 +1,5 @@
-import { act } from "react-dom/test-utils";
-import ReactDOM from "react-dom";
+import { act } from "preact/test-utils";
+import { unmountComponentAtNode } from 'preact/compat';
 
 const TEST_ID = "__useTests_hook_component";
 
@@ -27,7 +27,7 @@ export function cleanUp() {
 
 export function unmount(node = getContainer()) {
   act(() => {
-    ReactDOM.unmountComponentAtNode(node);
+    unmountComponentAtNode(node);
   });
 }
 

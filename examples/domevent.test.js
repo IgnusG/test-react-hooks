@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { createTestProxy, cleanUp, act } from "test-react-hooks";
+import { useEffect } from "preact/hooks";
+import { createTestProxy, cleanUp, act } from "test-preact-hooks";
 import { createSandboxClickEvent } from "./util";
 
 afterEach(() => cleanUp());

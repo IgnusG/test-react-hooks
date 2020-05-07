@@ -1,41 +1,35 @@
 {
-  "name": "test-react-hooks",
+  "name": "test-preact-hooks",
   "version": "2.0.2",
-  "description": "Testing for react hooks",
+  "description": "Testing for preact hooks",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "git@github.com:andrew-w-ross/test-react-hooks.git",
+  "repository": "git@github.com:ignusg/test-preact-hooks.git",
   "author": "Andrew Ross <rossirsa@gmail.com>",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "react": ">= 16.8.0",
-    "react-dom": ">= 16.8.0"
+    "preact": ">= 10.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/plugin-transform-modules-commonjs": "^7.9.0",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.0",
-    "@types/react": "^16.9.32",
-    "@types/react-dom": "^16.9.6",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^3.0.0",
     "jest": "^25.2.7",
+    "preact": "^10.4.1",
     "prettier": "^2.0.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "typescript": "^3.8.3"
   },
   "scripts": {
@@ -59,9 +53,9 @@
     ]
   },
   "keywords": [
-    "react",
+    "preact",
     "hooks",
     "testing",
-    "react-hooks"
+    "preact-hooks"
   ]
 }

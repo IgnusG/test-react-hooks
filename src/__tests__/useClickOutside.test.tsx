@@ -1,9 +1,9 @@
-import { RefObject, useEffect } from "react";
-import { act } from "react-dom/test-utils";
+import { useEffect, Ref } from "preact/hooks";
+import { act } from "preact/test-utils";
 import { createTestProxy } from "../createTestProxy";
 
 //Taken from https://usehooks.com/useOnClickOutside/
-function useOnClickOutside(ref: RefObject<Element>, handler: () => void) {
+function useOnClickOutside(ref: Ref<Element | null>, handler: () => void) {
   useEffect(() => {
     const listener = (event: MouseEvent) => {
       if (!ref.current || ref.current.contains(event.target as any)) {

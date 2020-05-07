@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer } from "preact/hooks";
 import { createTestProxy } from "../createTestProxy";
 
 const initialState = { count: 0 };

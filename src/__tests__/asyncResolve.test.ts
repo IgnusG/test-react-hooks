@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback } from "preact/hooks";
 import { createTestProxy } from "../";
 
 function useResolveOnChange(deps: any[] = []) {

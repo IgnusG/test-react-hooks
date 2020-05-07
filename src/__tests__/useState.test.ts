@@ -1,5 +1,5 @@
 import { createTestProxy } from "../";
-import { useState } from "react";
+import { useState } from "preact/hooks";
 
 const [prxState] = createTestProxy(useState);
 

@@ -6,6 +6,7 @@
     "declaration": true,
     "strict": true,
     "jsx": "react",
+    "jsxFactory": "h",
     "module": "commonjs",
     "sourceMap": true,
     "lib": ["esnext", "dom"],

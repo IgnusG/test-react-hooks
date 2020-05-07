@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { createTestProxy, cleanUp } from "test-react-hooks";
+import { useEffect, useState } from "preact/hooks";
+import { createTestProxy, cleanUp } from "test-preact-hooks";
 
 afterEach(() => cleanUp());
 

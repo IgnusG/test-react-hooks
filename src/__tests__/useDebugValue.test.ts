@@ -1,4 +1,4 @@
-import { useDebugValue } from "react";
+import { useDebugValue } from "preact/hooks";
 import { createTestProxy } from "../createTestProxy";
 
 const [prxDebugValue] = createTestProxy(useDebugValue);

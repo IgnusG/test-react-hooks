@@ -1,8 +1,12 @@
-import React, { FC } from "react";
-import ReactDOM from "react-dom";
-import { act } from "react-dom/test-utils";
+import {
+  h,
+  render as preactRender,
+  Fragment,
+  ComponentType,
+  FunctionComponent as FC,
+} from "preact";
+import { act } from "preact/test-utils";
 import { WrapFn, wrapProxy } from "./proxy";
-import "./reactWrap";
 import { getContainer, unmount } from "./utils";
 
 type TestHookProps = {
@@ -16,7 +20,7 @@ function TestHook({ callback, children }: TestHookProps) {
   return null;
 }
 
-const DefaultWrapper: FC = ({ children }) => <>{children}</>;
+const DefaultWrapper: FC = ({ children }) => <Fragment>{children}</Fragment>;
 
 /**
  * Options for createTestProxy
@@ -29,9 +33,9 @@ export interface UseProxyOptions<TProps> {
   /**
    * Component to wrap the test component in
    *
-   * @type {React.ComponentType<TProps>}
+   * @type {Component<TProps>}
    */
-  wrapper?: React.ComponentType<TProps>;
+  wrapper?: ComponentType<TProps>;
 
   /**
    * Initial  props to render the wrapper component with
@@ -97,7 +101,7 @@ export function createTestProxy<THook, TProps = any>(
   }
 
   function render(applyFn: () => void) {
-    ReactDOM.render(
+    preactRender(
       <Wrapper {...(props as any)}>
         <TestHook callback={applyFn}>{runResolvers}</TestHook>
       </Wrapper>,
