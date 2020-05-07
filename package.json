@@ -39,8 +39,8 @@
     "clean": "rm -rf dist",
     "build:tsc": "tsc -p tsconfig.build.json",
     "build:babel": "babel src --out-dir dist --extensions '.ts,.tsx,.js' --ignore '**/__tests__'",
-    "build": "yarn clean && yarn build:tsc && yarn build:babel",
-    "prepare": "yarn check && yarn build"
+    "build": "(yarn clean || npm run clean) && (yarn build:tsc || npm run build:tsc) && (yarn build:babel || npm run build:babel)",
+    "prepare": "(yarn check || npm run check) && (yarn build || npm run build)"
   },
   "jest": {
     "silent": true,
