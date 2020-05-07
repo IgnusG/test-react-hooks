@@ -3,7 +3,7 @@
   "version": "2.0.2",
   "description": "Testing for preact hooks",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "files": [
     "dist"
   ],
