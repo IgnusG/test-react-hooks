@@ -3100,6 +3100,11 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
+test-preact-hooks@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/test-preact-hooks/-/test-preact-hooks-2.0.2.tgz#2b3d3c83127498955ba3f90de7b16e899982e2be"
+  integrity sha512-yEbHWqXlGwBZYoy7XXDEu3ciIBzPqpxFoe+KahseGq5Naqn/8G4GapuRPGoOGO9TL2N/Dh/OTafCg4HrojmqKw==
+
 throat@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"

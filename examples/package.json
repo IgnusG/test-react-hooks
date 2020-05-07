@@ -10,7 +10,8 @@
     "@babel/plugin-transform-modules-commonjs": "^7.9.0",
     "@babel/plugin-transform-react-jsx": "^7.9.4",
     "jest": "^25.2.7",
-    "preact": "^10.4.1"
+    "preact": "^10.4.1",
+    "test-preact-hooks": "^2.0.2"
   },
   "scripts": {
     "test": "jest"
@@ -21,5 +22,6 @@
       "<rootDir>/node_modules",
       "node_modules"
     ]
-  }
+  },
+  "devDependencies": {}
 }
