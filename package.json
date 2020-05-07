@@ -7,7 +7,13 @@
   "files": [
     "dist"
   ],
-  "repository": "git@github.com:ignusg/test-preact-hooks.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IgnusG/test-preact-hooks"
+  },
+  "bugs": {
+    "url": "https://github.com/IgnusG/test-preact-hooks/issues"
+  },
   "author": "Andrew Ross <rossirsa@gmail.com>",
   "license": "MIT",
   "private": false,
