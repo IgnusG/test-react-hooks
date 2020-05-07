@@ -43,6 +43,6 @@ jobs:
       - name: Test examples
         working-directory: ./examples
         run: |
-          yarn link test-react-hooks
+          yarn link test-preact-hooks
           yarn
           yarn test

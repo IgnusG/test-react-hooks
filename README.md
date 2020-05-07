@@ -1,19 +1,21 @@
-# test-react-hooks ⚓️
+# test-preact-hooks ⚓️
 
-Simple testing for react hooks
+Simple testing for preact hooks
 
-![](https://img.shields.io/david/andrew-w-ross/test-react-hooks.svg?style=flat)
-![](https://img.shields.io/npm/dt/test-react-hooks.svg?style=flat)
-![](https://img.shields.io/npm/v/test-react-hooks.svg?style=flat)
-![](https://github.com/andrew-w-ross/test-react-hooks/workflows/CI/badge.svg)
+![](https://img.shields.io/david/ignusg/test-preact-hooks.svg?style=flat)
+![](https://img.shields.io/npm/dt/test-preact-hooks.svg?style=flat)
+![](https://img.shields.io/npm/v/test-preact-hooks.svg?style=flat)
+![](https://github.com/ignusg/test-preact-hooks/workflows/CI/badge.svg)
+
+This is a fork of the awesome test-react-hooks library migrated to preact - [check it out](https://github.com/andrew-w-ross/test-react-hooks)
 
 Example usage can be found at this sandbox
 
-[![Edit examples](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/andrew-w-ross/test-react-hooks/tree/master/examples?autoresize=1&module=%2Fcount.spec.js&previewwindow=tests)
+[![Edit examples](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/ignusg/test-preact-hooks/tree/master/examples?autoresize=1&module=%2Fcount.spec.js&previewwindow=tests)
 
 ## Contents
 
-- [test-react-hooks ⚓️](#test-react-hooks-%E2%9A%93%EF%B8%8F)
+- [test-preact-hooks ⚓️](#test-preact-hooks-%E2%9A%93%EF%B8%8F)
   - [Contents](#contents)
   - [Get Started](#get-started)
   - [Api](#api)
@@ -27,18 +29,18 @@ Example usage can be found at this sandbox
 
 To install either :
 
-`yarn add test-react-hooks -D` or `npm i test-react-hooks --save-dev`
+`yarn add test-preact-hooks -D` or `npm i test-preact-hooks --save-dev`
 
-`test-react-hooks` needs a dom to work, if you're running jest you should be good to go. For anything else consult your testing framework of choice.
+`test-preact-hooks` needs a dom to work, if you're running jest you should be good to go. For anything else consult your testing framework of choice.
 
 Example
 
 ```javascript
-import { createTestProxy, cleanUp } from "test-react-hooks";
-import { useState } from "react";
+import { createTestProxy, cleanUp } from "test-preact-hooks";
+import { useState } from "preact/hooks";
 
-//Cleans up the dom container that's created during testing
-//For jest users just add to setupFilesAfterEnv
+// Cleans up the dom container that's created during testing
+// For jest users just add to setupFilesAfterEnv
 afterEach(() => cleanUp());
 
 // Create your hook
@@ -51,8 +53,8 @@ const useCounter = (initial = 0, inc = 1) => {
   };
 };
 
-//Proxy of your hook, use it like you would in a component
-//Internally calls render for the hook and act on everything else
+// Proxy of your hook, use it like you would in a component
+// Internally calls render for the hook and act on everything else
 const [prxCounter] = createTestProxy(useCounter);
 
 it("will increment by one", () => {
@@ -121,9 +123,9 @@ Creates a proxy of the hook passed in for testing.
     /**
      * Component to wrap the test component in
      *
-     * @type {React.ComponentType<TProps>}
+     * @type {ComponentType<TProps>}
      */
-    wrapper?: React.ComponentType<TProps>;
+    wrapper?: ComponentType<TProps>;
 
     /**
      * Initial  props to render the wrapper component with
@@ -185,7 +187,7 @@ Function to be called after your tests to clean up the container created during 
 
 `act(callback: () => void):void`
 
-Re-exported from [react-dom/test-utils](https://reactjs.org/docs/test-utils.html#act)
+Re-exported from [preact/test-utils](https://preactjs.com/guide/v10/unit-testing-with-enzyme/#triggering-state-updates-and-effects-with-act)
 
 Use this if your updating the dom outside the hook.
 
