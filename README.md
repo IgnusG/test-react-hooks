@@ -131,6 +131,11 @@ Creates a proxy of the hook passed in for testing.
      * Initial  props to render the wrapper component with
      */
     props?: TProps;
+
+    /**
+     * Toggle if result of hook should be wrapped in a proxy - set to true to check for strict equality
+     */
+    shallow?: boolean;
   }
   ```
 
@@ -176,6 +181,8 @@ Tuple with the first element being a proxy hook and it's control object
     waitForNextUpdate: () => Promise<void>;
   }
   ```
+
+If you chose to use `shallow: true` the result of the proxy will not be wrapped in a proxy. This can cause instability with complex hooks but can be used to check for strict equality (for example if a hook should return an exact object copy for `useMemo` or `useEffect` comparison).
 
 ### cleanup
 
