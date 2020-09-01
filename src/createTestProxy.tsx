@@ -41,6 +41,11 @@ export interface UseProxyOptions<TProps> {
    * Initial  props to render the wrapper component with
    */
   props?: TProps;
+
+  /**
+   * Toggle if result of hook should be wrapped in a proxy - set to true to check for strict equality
+   */
+  shallow?: boolean;
 }
 
 /**
@@ -90,7 +95,7 @@ export function createTestProxy<THook, TProps = any>(
   hook: THook,
   options: UseProxyOptions<TProps> = {}
 ): [THook, HookControl<TProps>] {
-  const { wrapper: Wrapper = DefaultWrapper } = options;
+  const { wrapper: Wrapper = DefaultWrapper, shallow } = options;
   let { props } = options;
 
   const resolvers: Function[] = [];
@@ -131,7 +136,7 @@ export function createTestProxy<THook, TProps = any>(
       new Promise<void>(resolve => resolvers.push(resolve))
   };
 
-  return [wrapProxy(hook, wrapFn), control];
+  return [wrapProxy(hook, wrapFn, { shallow }), control];
 }
 
 /**

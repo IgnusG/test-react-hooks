@@ -67,3 +67,29 @@ it("can go deep", () => {
   expect(proxy.a().b()).toBe("c");
   expect(wrapFn).toHaveBeenCalledTimes(2);
 });
+
+it("deep can be disabled", () => {
+  const value = {
+    a() {
+      return {
+        b() {
+          return "c";
+        }
+      };
+    }
+  };
+
+  const proxy = wrapProxy(value, wrapFn, { shallow: true });
+  expect(proxy.a().b()).toBe("c");
+  expect(wrapFn).toHaveBeenCalledTimes(1);
+});
+
+it("function result wrapping can be disabled", () => {
+  const value = () => () => {};
+  const proxy = wrapProxy(value, wrapFn, { shallow: true });
+  expect(proxy).not.toBe(value);
+  expect(wrapFn).not.toBeCalled();
+
+  proxy()();
+  expect(wrapFn).toBeCalledTimes(1);
+});
