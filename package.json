@@ -1,6 +1,6 @@
 {
   "name": "test-preact-hooks",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Testing for preact hooks",
   "main": "dist/index.js",
   "types": "dist/src/index.d.ts",
